@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Proposal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💖 Romantic Proposal 💖</h1>
+        <p>Answer these questions honestly, and let's see where this goes...</p>
+        <form id="proposalForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <label>1. Are you alive?</label>
+                <div>
+                    <button type="button" class="yes" onclick="setAnswer('alive', 'yes')">Yes</button>
+                    <button type="button" class="no" onclick="setAnswer('alive', 'no')">No</button>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label>2. Are you a girl?</label>
+                <div>
+                    <button type="button" class="yes" onclick="setAnswer('girl', 'yes')">Yes</button>
+                    <button type="button" class="no" onclick="setAnswer('girl', 'no')">No</button>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label>3. Are you taken?</label>
+                <div>
+                    <button type="button" class="yes" onclick="setAnswer('taken', 'yes')">Yes</button>
+                    <button type="button" class="no" onclick="setAnswer('taken', 'no')">No</button>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label>4. When is your birthday?</label>
+                <input type="date" id="birthday" required>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label>5. I am alive and you too. I am a boy and you are a girl. I am single and you are single. The difference between us is one year. Wouldn't you think we have so many things in common?</label>
+                <div>
+                    <button type="button" class="yes" onclick="setAnswer('common', 'yes')">Yes</button>
+                    <button type="button" class="no" onclick="setAnswer('common', 'no')">No</button>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <label>6. Would you like to be my girlfriend?</label>
+                <div>
+                    <button type="button" class="yes" onclick="setAnswer('girlfriend', 'yes')">Yes</button>
+                    <button type="button" class="no" onclick="setAnswer('girlfriend', 'no')">No</button>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
