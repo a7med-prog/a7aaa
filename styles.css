@@ -19,19 +19,41 @@ body {
     text-align: center;
 }
 
-h1 {
-    color: #ff6f61;
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
+.progress {
+    height: 10px;
+    background: #ff6f61;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
 .question {
+    display: none;
     margin-bottom: 20px;
+}
+
+.question.active {
+    display: block;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #555;
+}
+
+.common-text {
+    text-align: left;
+    margin-bottom: 20px;
+    font-style: italic;
     color: #555;
 }
 
@@ -63,7 +85,11 @@ button {
     background: #e53935;
 }
 
-.submit-btn {
+.navigation {
+    margin-top: 20px;
+}
+
+.prev-btn, .next-btn {
     background: #ff6f61;
     color: white;
     padding: 10px 20px;
@@ -71,11 +97,11 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px;
+    margin: 5px;
     transition: background 0.3s ease;
 }
 
-.submit-btn:hover {
+.prev-btn:hover, .next-btn:hover {
     background: #ff3b2f;
 }
 

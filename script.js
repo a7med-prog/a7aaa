@@ -1,3 +1,6 @@
+let currentQuestion = 0;
+const totalQuestions = document.querySelectorAll('.question').length;
+const progress = document.getElementById('progress');
 const answers = {
     alive: null,
     girl: null,
@@ -6,19 +9,35 @@ const answers = {
     girlfriend: null
 };
 
-function setAnswer(question, answer) {
-    answers[question] = answer;
-    document.querySelectorAll(`.${question}`).forEach(button => {
-        button.classList.remove('active');
+function showQuestion(index) {
+    const questions = document.querySelectorAll('.question');
+    questions.forEach((question, i) => {
+        question.classList.toggle('active', i === index);
     });
-    document.querySelector(`.${answer}[onclick*="${question}"]`).classList.add('active');
+    progress.style.width = `${((index + 1) / totalQuestions) * 100}%`;
 }
 
-document.getElementById('proposalForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+function setAnswer(question, answer) {
+    answers[question] = answer;
+}
 
-    const birthday = document.getElementById('birthday').value;
+function nextQuestion() {
+    if (currentQuestion < totalQuestions - 1) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+    } else {
+        showResult();
+    }
+}
 
+function prevQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+    }
+}
+
+function showResult() {
     if (answers.alive === 'yes' && answers.girl === 'yes' && answers.common === 'yes' && answers.girlfriend === 'yes') {
         document.getElementById('result').innerHTML = `
             <p>Welp, looks like there is no turning back now! 😂😂</p>
@@ -29,4 +48,7 @@ document.getElementById('proposalForm').addEventListener('submit', function(even
             <p>We could still be friends! 😊</p>
         `;
     }
-});
+}
+
+// Initialize the first question
+showQuestion(currentQuestion);

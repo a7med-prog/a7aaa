@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romantic Proposal</title>
+    <title>Step-by-Step Questions</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>💖 Romantic Proposal 💖</h1>
-        <p>Answer these questions honestly, and let's see where this goes...</p>
-        <form id="proposalForm">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questions-container">
             <!-- Question 1 -->
-            <div class="question">
+            <div class="question active">
                 <label>1. Are you alive?</label>
                 <div>
                     <button type="button" class="yes" onclick="setAnswer('alive', 'yes')">Yes</button>
@@ -46,7 +50,14 @@
 
             <!-- Question 5 -->
             <div class="question">
-                <label>5. I am alive and you too. I am a boy and you are a girl. I am single and you are single. The difference between us is one year. Wouldn't you think we have so many things in common?</label>
+                <label>5. Let's see if we have things in common:</label>
+                <div class="common-text">
+                    <p>I am alive, and you too.</p>
+                    <p>I am a boy, and you are a girl.</p>
+                    <p>I am single, and you are single.</p>
+                    <p>The difference between us is one year.</p>
+                    <p>Wouldn't you think we have so many things in common?</p>
+                </div>
                 <div>
                     <button type="button" class="yes" onclick="setAnswer('common', 'yes')">Yes</button>
                     <button type="button" class="no" onclick="setAnswer('common', 'no')">No</button>
@@ -61,10 +72,15 @@
                     <button type="button" class="no" onclick="setAnswer('girlfriend', 'no')">No</button>
                 </div>
             </div>
+        </div>
 
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
+        <!-- Navigation Buttons -->
+        <div class="navigation">
+            <button type="button" class="prev-btn" onclick="prevQuestion()">Previous</button>
+            <button type="button" class="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
 
+        <!-- Result Display -->
         <div id="result" class="result"></div>
     </div>
 
