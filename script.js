@@ -41,8 +41,8 @@ function showResult() {
     let resultMessage = '';
     if (answers.alive === 'yes' && answers.girl === 'yes' && answers.common === 'yes' && answers.girlfriend === 'yes') {
         resultMessage = `
-            <p>Welp, looks like there is no turning back now! 😂😂</p>
-            <p>Congrats, you are now taken!! 💑</p>
+            <p>looks like there is no turning back now! </p>
+            <p>Congrats, you are now taken!! </p>
         `;
     } else {
         resultMessage = `
